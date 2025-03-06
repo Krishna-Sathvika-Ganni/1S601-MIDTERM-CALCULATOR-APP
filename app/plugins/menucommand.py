@@ -1,4 +1,7 @@
 from app.commands import Command
+import logging
+
+logger=logging.getLogger(__name__)
 
 class Menu(Command):
     '''This displays available commands in the system'''
@@ -11,8 +14,10 @@ class Menu(Command):
 
         if not commands:
             print("There are no commands")
+            logger.warning("No commands")
             return
         print("Commands Available:")
+        logger.info("Available commands")
         for command in commands:
             print(f"-> {command}") 
         print("Type 'exit' to quit" )
