@@ -4,13 +4,14 @@ from decimal import Decimal
 import pytest
 from app.calculator.calculation import Calculation
 from app.calculator.calculations import Calculations
-from app.operation.operations import add
+from app.operation.operations import add, subtract
 
 @pytest.fixture
 def setup_calculations():
     '''Clearing the history and adding sample calculations for tests'''
     Calculations.clear_history()
     Calculations.add_calculation(Calculation(Decimal('3'), Decimal('4'), add))
+    Calculations.add_calculation(Calculation(Decimal('4'), Decimal('2'), subtract))
 
 def test_add_calculation(setup_calculations):
     '''Test adding a calculation to the history'''
@@ -21,7 +22,7 @@ def test_add_calculation(setup_calculations):
 def test_get_history(setup_calculations):
     '''Test retrieving the entire calculation history'''
     history = Calculations.get_history()
-    assert len(history) == 1, "History does not contain expected number of calculations"
+    assert len(history) == 2, "History does not contain expected number of calculations"
 
 def test_clear_history(setup_calculations):
     '''Test clearing the entire calculation history.'''
