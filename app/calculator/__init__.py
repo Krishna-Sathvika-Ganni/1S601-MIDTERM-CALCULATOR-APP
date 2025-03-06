@@ -1,4 +1,4 @@
-from app.operation.operations import add, subtract, multiply # Imported add, subtract, multiply
+from app.operation.operations import add, subtract, multiply,divide # Imported add, subtract, multiply, divide
 from app.calculator.calculation import Calculation
 from app.calculator.calculations import Calculations
 from decimal import Decimal
@@ -26,4 +26,8 @@ class Calculator:
     @staticmethod
     def multiply(x: Decimal,y: Decimal) -> Decimal:
         return Calculator._perform_operation(x, y, multiply)
+    
+    @staticmethod
+    def divide(x: Decimal,y: Decimal) -> Decimal:
+        return Calculator._perform_operation(x, y, divide)
     
