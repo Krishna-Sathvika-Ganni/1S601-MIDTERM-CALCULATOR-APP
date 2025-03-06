@@ -42,14 +42,9 @@ class History_Manager:
 
     @classmethod
     def clear_history(cls):
-        if not Calculations.get_history():
-            logger.warning("There is no history")
-            print("No history to clear.")
-            return
-    
         Calculations.clear_history()
-        logger.info("Cleared in-memory history.")
-        print("Cleared in-memory history.")
+        logger.info("Cleared History")
+        print("History cleared.")
 
     @classmethod
     def delete_history(cls):
