@@ -16,7 +16,7 @@ class History_Manager:
             logger.warning("No history data")
             return
         
-        os.makedirs("data",exist_ok=True)
+        os.makedirs(os.path.dirname(cls.HISTORY_FILE), exist_ok=True)
         data=[{"x":calc.x, "y":calc.y, "operation":calc.operation.__name__, "result":calc.perform()} for calc in history]
         df=pd.DataFrame(data)
         df.to_csv(cls.HISTORY_FILE, index=False)
