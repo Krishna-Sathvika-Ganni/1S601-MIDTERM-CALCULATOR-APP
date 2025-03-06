@@ -49,17 +49,7 @@ class History_Manager:
     
         Calculations.clear_history()
         logger.info("Cleared in-memory history.")
-
-        if os.path.exists(cls.HISTORY_FILE) and os.path.getsize(cls.HISTORY_FILE) > 0:
-            open(cls.HISTORY_FILE, 'w').close()  
-            logger.info("History cleared.")
-            print("History cleared.")
-        else:
-            logger.warning("No history available")
-            print("No saved history file to clear.")
-
-        logger.info("History cleared")
-        print("History cleared successfully.")
+        print("Cleared in-memory history.")
 
     @classmethod
     def delete_history(cls):
