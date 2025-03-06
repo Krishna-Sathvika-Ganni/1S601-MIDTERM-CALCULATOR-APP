@@ -17,9 +17,14 @@ class History_Manager:
             return
         
         os.makedirs(os.path.dirname(cls.HISTORY_FILE), exist_ok=True)
-        data=[{"x":calc.x, "y":calc.y, "operation":calc.operation.__name__, "result":calc.perform()} for calc in history]
-        df=pd.DataFrame(data)
-        df.to_csv(cls.HISTORY_FILE, index=False)
+        data=pd.DataFrame([
+            {"x":calc.x, "y":calc.y, "operation":calc.operation.__name__, "result":calc.perform()} 
+            for calc in history
+        ])
+
+        file_exists = os.path.exists(cls.HISTORY_FILE)
+
+        data.to_csv(cls.HISTORY_FILE, mode='a', header=not file_exists, index=False) 
         print("History saved.")
         logger.info("Saved History")
 
