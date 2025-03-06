@@ -3,7 +3,7 @@
 from decimal import Decimal
 from faker import Faker
 import pytest
-from app.operation.operations import add
+from app.operation.operations import add, subtract
 
 fake = Faker()
 '''Initalizing the faker object'''
@@ -22,6 +22,7 @@ def generate_test_data(num_records):
     '''Defining operation mappings for both calculator and calculation tests'''
     operation_mappings = {
         'add': add,
+        'subtract': subtract
     }
 
     test_cases = []
