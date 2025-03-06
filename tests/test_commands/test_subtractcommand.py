@@ -1,4 +1,4 @@
-# pylint: disable=missing-class-docstring
+'''This is the test for subtract command'''
 from unittest.mock import Mock, patch
 import pytest
 from app.plugins.subtractcommand import Subtract
@@ -16,10 +16,10 @@ def subtract_command(mock_command_handler):
     '''Fixture'''
     return Subtract(command_handler=mock_command_handler)
 
-# Testing the subtract command
 class TestSubtractCommand:
+    '''Testing the subtract command'''
     def test_subtract(self,subtract_command,capsys):
-        '''Testing multiply command'''            
+        '''Testing subtract command'''            
         subtract_command.execute('4','2')
         captured=capsys.readouterr()
         assert "4 - 2 = 2" in captured.out
