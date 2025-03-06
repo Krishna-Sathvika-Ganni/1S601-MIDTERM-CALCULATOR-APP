@@ -3,8 +3,9 @@
 # pylint: disable=unnecessary-dunder-call, invalid-name
 
 from decimal import Decimal
+import pytest
 from app.calculator.calculation import Calculation
-from app.operation.operations import add
+from app.operation.operations import add, divide
 
 def test_calculation_operations(x, y, operation, expected):
     '''Calculation operations with various cases'''
@@ -16,5 +17,11 @@ def test_calculation_repr():
     calc=Calculation(Decimal('3'), Decimal('4'), add)
     expected_repr="Calculation(3, 4, add)"
     assert repr(calc) == expected_repr, "The __repr__ method is not matching the expected string."
+
+def test_divide_by_zero():
+    ''' Division by zero raises a Valueerror'''
+    calc=Calculation(Decimal('15'), Decimal('0'), divide)
+    with pytest.raises(ValueError, match="Cannot be divided by Zero"):
+        calc.perform()
 
 # End of program
