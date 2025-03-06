@@ -1,10 +1,7 @@
 '''This is test_multiplycommand file'''
 from unittest.mock import Mock, patch
 import pytest
-from app.plugins.addcommand import Add
-from app.plugins.subtractcommand import Subtract
 from app.plugins.multiplycommand import Multiply
-from app.plugins.menucommand import Menu
 
 @pytest.fixture
 def mock_command_handler():
@@ -19,8 +16,8 @@ def multiply_command(mock_command_handler):
     '''Fixture'''
     return Multiply(command_handler=mock_command_handler)
 
-# Testing the Multiply command:
 class TestMultiplyCommand:
+    '''Testing the Multiply command'''
     def test_multiply(self,multiply_command,capsys):
         '''Testing multiply command'''
         multiply_command.execute('4','2')
@@ -46,3 +43,5 @@ class TestMultiplyCommand:
             multiply_command.execute('4', '2')
             captured = capsys.readouterr()
             assert "Error" in captured.out
+
+# End of program

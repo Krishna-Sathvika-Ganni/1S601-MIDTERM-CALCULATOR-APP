@@ -22,7 +22,8 @@ def generate_test_data(num_records):
     '''Defining operation mappings for both calculator and calculation tests'''
     operation_mappings = {
         'add': add,
-        'subtract': subtract
+        'subtract': subtract,
+        'multiply': multiply
     }
 
     test_cases = []
