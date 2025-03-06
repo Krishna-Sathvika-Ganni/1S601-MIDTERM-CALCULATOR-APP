@@ -19,4 +19,11 @@ def test_subtraction():
     expected=x-y
     assert Calculator.subtract(x,y)==expected
 
+def test_multiplication():
+    '''Test that Multiplication function works'''
+    x=fake.random_int(min=0,max=50)
+    y=fake.random_int(min=0,max=50)
+    expected=x*y
+    assert Calculator.multiply(x,y)==expected
+
 # End of program
