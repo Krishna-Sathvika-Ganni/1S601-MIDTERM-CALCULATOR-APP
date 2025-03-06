@@ -1,4 +1,4 @@
-from app.operation.operations import add # Imported the add operation from operations 
+from app.operation.operations import add, subtract,multiply # Imported the add, subtract operations from operations 
 from decimal import Decimal
 from typing import Callable
 
