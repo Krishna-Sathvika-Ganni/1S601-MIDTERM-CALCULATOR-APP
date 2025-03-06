@@ -29,7 +29,7 @@ def test_app_start_unknown_command(capfd, monkeypatch):
 def app_command_with_args(capfd,monkeypatch):
     '''Test how the REPL handles test app command with arguments '''
     inputs=iter(['Add 2 4', 'exit'])
-    monkeypatch.seattr('builtins.input', lambda _: next(inputs) )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs) )
 
     app=App()
     with pytest.raises(SystemExit):
