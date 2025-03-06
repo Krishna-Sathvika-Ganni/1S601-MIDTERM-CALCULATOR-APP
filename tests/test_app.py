@@ -24,7 +24,7 @@ def test_app_start_unknown_command(capfd, monkeypatch):
         app.start()
 
     captured = capfd.readouterr()
-    assert "Error: 'unknown_command' is not a recognized command" in captured.out, "App should notify user of unknown command"
+    assert "Error: 'unknown_command' is not a registered command" in captured.out, "App should notify user of unknown command"
 
 def app_command_with_args(capfd,monkeypatch):
     '''Test how the REPL handles test app command with arguments '''
