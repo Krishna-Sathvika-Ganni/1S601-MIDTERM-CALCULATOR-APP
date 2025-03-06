@@ -43,8 +43,15 @@ class History_Manager:
     @classmethod
     def clear_history(cls):
         Calculations.clear_history()
-        logger.info("Cleared History")
-        print("History cleared.")
+
+        if os.path.exists(cls.HISTORY_FILE):
+            open(cls.HISTORY_FILE, 'w').close()
+            logger.info("Cleared History")
+            print("History cleared.")
+        else:
+            logger.info("No history to clear")
+            print("There is no history to clear.")
+    
 
     @classmethod
     def delete_history(cls):
