@@ -24,9 +24,10 @@ class App:
     def configuring_logging(self):
         logging_conf_path='logging.conf'
         if os.path.exists(logging_conf_path):
-            logger.config.fileConfig(logging_conf_path, disable_existing_loggers=False)
+            logging.config.fileConfig(logging_conf_path, disable_existing_loggers=False)
+            logger.info("Configured")
         else:
-            logger.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+            logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
             logger.info("Logging configured")
 
     def load_plugins(self):
@@ -68,7 +69,7 @@ class App:
                 command_name=command_name.lower()
                 if not self.command_handler.Execute_Command(command_name, *args):
                     print(f"Error: '{command_name}' is not a registered command")
-                    logger.warning("Command not recognized")
+                    logger.warning(f"Unknown command: {command_name}")
             
             except Exception as e:
                 print(f"An error occurred: {e}")
