@@ -53,3 +53,5 @@ class TestDivideCommand:
             divide_command.execute('4', '2')
             captured = capsys.readouterr()
             assert "Error" in captured.out
+
+# End of program

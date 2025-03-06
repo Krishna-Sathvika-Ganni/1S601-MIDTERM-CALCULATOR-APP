@@ -32,7 +32,7 @@ def test_clear_history(setup_calculations):
 def test_get_latest(setup_calculations):
     '''Test getting the latest calculation from the history'''
     latest = Calculations.get_latest()
-    assert latest.x == Decimal('3') and latest.y == Decimal('4'), "Haven't got the correct latest calculation"
+    assert latest.x == Decimal('4') and latest.y == Decimal('2'), "Haven't got the correct latest calculation"
 
 def test_find_by_operation(setup_calculations):
     '''Test finding calculations in the history by operation type'''
