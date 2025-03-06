@@ -13,7 +13,7 @@ class Subtract(Command):
     def execute(self, *args):
         if not args:  # This prompts for input, if arguments are not given
             logger.info("There are no arguments given, so prompting for input")
-            args = input("Enter two numbers separated by space: ").split()
+            args = input("Enter two numbers: ").split()
 
         if len(args) != 2:  # Makes sure that only two arguments must be given
             logger.error("Number of arguments given is incorrect")
