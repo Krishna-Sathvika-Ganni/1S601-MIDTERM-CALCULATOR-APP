@@ -6,4 +6,4 @@ class DeleteHistory(Command):
         self.command_handler=command_handler
         
     def execute(self):
-        History_Manager.clear_history()
+        History_Manager.delete_history()
