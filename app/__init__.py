@@ -54,7 +54,6 @@ class App:
 
     def start(self):
         print("WELCOME TO THE CALCULATOR PROGRAM!!\n --> Type 'Menu' to see available commands. \n --> Type 'Exit' to quit.")
-        self.command_handler.Execute_Command("menu")
         while True:
             try:
                 c = input("Enter the command: ").strip().lower()
