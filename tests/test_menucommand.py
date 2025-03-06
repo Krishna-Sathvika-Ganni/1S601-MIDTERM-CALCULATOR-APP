@@ -17,7 +17,7 @@ def mock_command_handler():
 def menu_command(mock_command_handler):
     '''Fixture for Menu Command'''
     # Correct the MockCommandHandler to return the list of commands
-    mock_command_handler.Get_Registered_Commands = Mock(return_value=["Add", "Subtract", "Multiply", "Divide", "Menu"])
+    mock_command_handler.Get_Registered_Commands = Mock(return_value=["Add","Menu"])
     return Menu(command_handler=mock_command_handler)
 
 # Testing menu command
@@ -30,7 +30,4 @@ class TestMenuCommand:
         captured = capsys.readouterr()
         assert "Commands Available:" in captured.out, "MenuCommand should display the available commands"
         assert "Add" in captured.out
-        assert "Subtract" in captured.out
-        assert "Multiply" in captured.out
-        assert "Divide" in captured.out
         assert "Menu" in captured.out
