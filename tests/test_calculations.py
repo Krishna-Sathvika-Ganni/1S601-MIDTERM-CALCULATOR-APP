@@ -10,22 +10,22 @@ from app.operation.operations import add
 def setup_calculations():
     '''Clearing the history and adding sample calculations for tests'''
     Calculations.clear_history()
-    Calculations.add_calculation(Calculation(Decimal('29'), Decimal('13'), add))
+    Calculations.add_calculation(Calculation(Decimal('3'), Decimal('4'), add))
 
 def test_add_calculation(setup_calculations):
     '''Test adding a calculation to the history'''
-    calc=Calculation(Decimal('3'), Decimal('2'), add)
+    calc=Calculation(Decimal('3'), Decimal('4'), add)
     Calculations.add_calculation(calc)
     assert Calculations.get_latest() == calc, "Adding the calculation to history failed."
 
 def test_get_history(setup_calculations):
     '''Test retrieving the entire calculation history'''
     history = Calculations.get_history()
-    assert len(history) == 2, "History does not contain expected number of calculations"
+    assert len(history) == 1, "History does not contain expected number of calculations"
 
 def test_clear_history(setup_calculations):
     '''Test clearing the entire calculation history.'''
-    Calculations.clear_history()
+    history=Calculations.clear_history()
     assert len(Calculations.get_history()) == 0, "History is not cleared"
 
 def test_get_latest(setup_calculations):
