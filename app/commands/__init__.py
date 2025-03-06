@@ -1,4 +1,8 @@
 from abc import ABC, abstractmethod
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 class Command(ABC):
     '''This is the abstract base for commands.'''
@@ -16,21 +20,31 @@ class CommandHandler:
     
     def Register_Command(self, command_name: str, command: Command):
         '''This function registers a command.'''
-        self.commands[command_name]=command
-        print(f"Registered command: {command_name}")
+        if command_name in self.commands:
+            logger.warning(f"Command '{command_name}' is already registered.")
+        else:
+            logger.info(f"Registering command: {command_name}")
+        self.commands[command_name] = command
     
     def Execute_Command(self, command_name: str, *args):
         '''Executes a registered command if exists'''
-        try:
-            if command_name in self.commands:
+        if command_name in self.commands:
+            try:
+                logger.info(f"Executing: {command_name}")
                 self.commands[command_name].execute(*args)
                 return True
-            else:
-                print(f"{command_name} : Command not found")
-                return False
-        except (KeyError, TypeError):
-            print(f"{command_name} : There is no such command or invalid arguments for the command are given")
+            
+            except Exception as e:
+                logging.error(f"Error executing: {command_name}: {e}")
+        else:
+            logger.error(f"Command {command_name} not found")
+            return False
 
     def get_registered_commands(self):
         '''Gives the list of registered commands'''
-        return list(self.commands.keys())
+        if self.commands:
+            logger.info(f"Commands registered: {','.join(self.commands.keys())}")
+            return list(self.commands.keys())
+        else:
+            logger.warning("There are no commands")
+            return []
