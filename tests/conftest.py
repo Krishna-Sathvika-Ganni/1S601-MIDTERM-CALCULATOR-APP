@@ -24,11 +24,17 @@ def generate_test_data(num_records):
         'add': add,
     }
 
+    test_cases = []
+
     for _ in range(num_records):
         x = Decimal(fake.random_number(digits=2))
         y = Decimal(fake.random_number(digits=2)) if _ % 4 != 3 else Decimal(fake.random_number(digits=1))
         operation_name = fake.random_element(elements=list(operation_mappings.keys()))
         operation_func = operation_mappings[operation_name]
+        expected = operation_func(x, y)
+        test_cases.append(x, y, operation_name, operation_func, expected)
+
+    return test_cases
 
 # pylint: disable=unused-argument
 def pytest_generate_tests(metafunc):
