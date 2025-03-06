@@ -4,7 +4,6 @@ import pytest
 from app.plugins.addcommand import Add
 from app.plugins.subtractcommand import Subtract
 from app.plugins.multiplycommand import Multiply
-from app.plugins.dividecommand import Divide
 from app.plugins.menucommand import Menu
 
 @pytest.fixture
@@ -14,6 +13,11 @@ def mock_command_handler():
     mock_handler.Register_Command=Mock()
     mock_handler.Execute_Command=Mock()
     return mock_handler
+
+@pytest.fixture
+def multiply_command(mock_command_handler):
+    '''Fixture'''
+    return Multiply(command_handler=mock_command_handler)
 
 # Testing the Multiply command:
 class TestMultiplyCommand:
