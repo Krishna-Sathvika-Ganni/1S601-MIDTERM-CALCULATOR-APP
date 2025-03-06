@@ -32,7 +32,7 @@ def generate_test_data(num_records):
         operation_name = fake.random_element(elements=list(operation_mappings.keys()))
         operation_func = operation_mappings[operation_name]
         expected = operation_func(x, y)
-        test_cases.append(x, y, operation_name, operation_func, expected)
+        test_cases.append((x, y, operation_name, operation_func, expected))
 
     return test_cases
 

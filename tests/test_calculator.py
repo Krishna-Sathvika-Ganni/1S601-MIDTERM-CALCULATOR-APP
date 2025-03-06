@@ -11,3 +11,5 @@ def test_addition():
     y = fake.random_int(min=0,max=50)
     expected = x + y
     assert Calculator.add(x,y)==expected
+
+# End of program

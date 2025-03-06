@@ -3,7 +3,6 @@
 # pylint: disable=unnecessary-dunder-call, invalid-name
 
 from decimal import Decimal
-import pytest
 from app.calculator.calculation import Calculation
 from app.operation.operations import add
 
@@ -17,3 +16,5 @@ def test_calculation_repr():
     calc=Calculation(Decimal('3'), Decimal('4'), add)
     expected_repr="Calculation(3, 4, add)"
     assert repr(calc) == expected_repr, "The __repr__ method is not matching the expected string."
+
+# End of program

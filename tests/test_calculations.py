@@ -37,8 +37,10 @@ def test_find_by_operation(setup_calculations):
     '''Test finding calculations in the history by operation type'''
     add_operations = Calculations.find_by_operation("add")
     assert len(add_operations) == 1, "Correct number of calculations with add operation are not found"
-    
+
 def test_get_latest_with_empty_history():
     '''Test getting the latest calculation when the history is empty'''
     Calculations.clear_history()
     assert Calculations.get_latest() is None, "Expected None for latest calculation with empty history"
+
+# End of program
