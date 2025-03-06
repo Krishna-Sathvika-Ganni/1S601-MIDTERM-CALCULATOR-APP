@@ -34,3 +34,5 @@ def app_command_with_args(capfd,monkeypatch):
     app=App()
     with pytest.raises(SystemExit):
         app.start()
+
+# End of program

@@ -31,3 +31,5 @@ class TestMenuCommand:
         assert "Commands Available:" in captured.out, "MenuCommand should display the available commands"
         assert "Add" in captured.out
         assert "Menu" in captured.out
+
+# End of program
