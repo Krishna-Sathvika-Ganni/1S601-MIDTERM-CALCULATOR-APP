@@ -13,19 +13,20 @@ class Add(Command):
     def execute(self, *args):
         if not args:  
             # This prompts for input, if arguments are not given.
-            args = input("Enter two numbers: ").split()
             logger.info("There are no arguments given, so prompting for input")
+            args = input("Enter two numbers: ").split()
+            
         if len(args) != 2:  
             # Makes sure that only two arguments must be given
-            print("Only two arguments must be given")
             logger.error("Number of arguments given is incorrect")
+            print("Only two arguments must be given")
             return
 
         try:
             x, y = map(Decimal, args)  
             result = Calculator.add(x, y)
-            print(f"{x} + {y} = {result}")
             logger.info("Addition operation is being done")
+            print(f"{x} + {y} = {result}")
         
         except InvalidOperation:
             logger.error("Invalid arguments given")
