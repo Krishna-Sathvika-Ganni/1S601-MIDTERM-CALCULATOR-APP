@@ -3,7 +3,7 @@
 from decimal import Decimal
 from faker import Faker
 import pytest
-from app.operation.operations import add, subtract, multiply
+from app.operation.operations import add, subtract, multiply, divide
 
 fake = Faker()
 '''Initalizing the faker object'''
@@ -23,7 +23,8 @@ def generate_test_data(num_records):
     operation_mappings = {
         'add': add,
         'subtract': subtract,
-        'multiply': multiply
+        'multiply': multiply,
+        'divide': divide
     }
 
     test_cases = []
@@ -33,6 +34,17 @@ def generate_test_data(num_records):
         y = Decimal(fake.random_number(digits=2)) if _ % 4 != 3 else Decimal(fake.random_number(digits=1))
         operation_name = fake.random_element(elements=list(operation_mappings.keys()))
         operation_func = operation_mappings[operation_name]
+
+        if operation_func == divide: # pylint: disable=comparison-with-callable
+            y = Decimal('1') if y == Decimal('0') else y
+        try:
+            if operation_func == divide and y == Decimal('0'): # pylint: disable=comparison-with-callable
+                expected = ZeroDivisionError
+            else:
+                expected = operation_func(x,y)
+        except ZeroDivisionError:
+            expected = ZeroDivisionError
+        yield x, y, operation_name, operation_func, expected
         expected = operation_func(x, y)
         test_cases.append((x, y, operation_name, operation_func, expected))
 
