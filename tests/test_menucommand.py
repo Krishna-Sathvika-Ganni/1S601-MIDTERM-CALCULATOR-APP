@@ -1,6 +1,6 @@
 # pylint: disable=missing-class-docstring
 '''This is test_command file'''
-from unittest.mock import Mock, patch
+from unittest.mock import Mock
 import pytest
 from app.plugins.menucommand import Menu
 
@@ -17,7 +17,7 @@ def mock_command_handler():
 def menu_command(mock_command_handler):
     '''Fixture for Menu Command'''
     # Correct the MockCommandHandler to return the list of commands
-    mock_command_handler.Get_Registered_Commands = Mock(return_value=["Add","Menu"])
+    mock_command_handler.get_registered_commands = Mock(return_value=["Add", "Menu"])
     return Menu(command_handler=mock_command_handler)
 
 # Testing menu command
