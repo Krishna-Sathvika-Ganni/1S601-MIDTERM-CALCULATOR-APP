@@ -1,9 +1,8 @@
 # pylint: disable=missing-class-docstring
 '''This is test_command file'''
-from unittest.mock import Mock, patch
+from unittest.mock import Mock
 import pytest
-from app.plugins.savehistorycommand import SaveHistory 
-
+from app.plugins.savehistorycommand import SaveHistory
 
 @pytest.fixture
 def mock_command_handler():
@@ -21,6 +20,9 @@ def save_history_command(mock_command_handler):
 class test_save_history:
     '''Testing the save history command'''
     def test_save_history(self, save_history_command, capsys):
+        '''Testing'''
         save_history_command.execute()
         captured = capsys.readouterr()
         assert "History saved successfully" in captured.out
+
+# End of program
