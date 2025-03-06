@@ -28,13 +28,13 @@ class Add(Command):
             logger.info("Addition operation is being done")
         
         except InvalidOperation:
-            print(f"One of the entered numbers is invalid. Please enter valid inputs.")
             logger.error("Invalid arguments given")
+            print(f"One of the entered numbers is invalid. Please enter valid inputs.")
         
         except ValueError as ve: 
-            print(f"{ve}")
             logger.error("Value error occured")
+            print(f"{ve}")
         
         except Exception as e:
-            print(f"{e}")
             logger.error("Unexpected error")
+            print(f"{e}")

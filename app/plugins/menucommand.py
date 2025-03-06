@@ -13,11 +13,11 @@ class Menu(Command):
         commands=self.command_handler.get_registered_commands()
 
         if not commands:
-            print("There are no commands")
             logger.warning("No commands")
+            print("There are no commands")
             return
-        print("Commands Available:")
         logger.info("Available commands")
+        print("Commands Available:")
         for command in commands:
             print(f"-> {command}") 
         print("Type 'exit' to quit" )

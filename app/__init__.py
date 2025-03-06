@@ -49,18 +49,18 @@ class App:
                                 self.command_handler.Register_Command(plugin_name.replace("command", "").strip("_"), item())
             
             except Exception as e:
-                print(f"Failed to load plugin {plugin_name}: {e}")
                 logger.error("Failed to load plugin")
+                print(f"Failed to load plugin {plugin_name}: {e}")
 
     def start(self):
-        print("WELCOME TO THE CALCULATOR PROGRAM!\n Type 'Menu' to see available commands. \n Type 'Exit' to quit.")
+        print("WELCOME TO THE CALCULATOR PROGRAM!!\n --> Type 'Menu' to see available commands. \n --> Type 'Exit' to quit.")
         self.command_handler.Execute_Command("menu")
         while True:
             try:
-                c = input("Enter the operation name: ").strip().lower()
+                c = input("Enter the command: ").strip().lower()
                 if c == "exit":
-                    raise SystemExit("Program is Exiting..!")
                     logger.info("Exited")
+                    raise SystemExit("Program is Exiting..!")
                 
                 user_input_split = c.split()
                 command_name = user_input_split[0]
@@ -68,9 +68,10 @@ class App:
 
                 command_name=command_name.lower()
                 if not self.command_handler.Execute_Command(command_name, *args):
-                    print(f"Error: '{command_name}' is not a registered command")
                     logger.warning(f"Unknown command: {command_name}")
+                    print(f"Error: '{command_name}' is not a registered command")
             
             except Exception as e:
-                print(f"An error occurred: {e}")
                 logger.error("Error")
+                print(f"An error occurred: {e}")
+                
