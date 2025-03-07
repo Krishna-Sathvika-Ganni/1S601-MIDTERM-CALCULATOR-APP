@@ -26,6 +26,7 @@ class CommandHandler:
             logger.info(f"Registering command: {command_name}")
         self.commands[command_name] = command
     
+    # Here is also LBYL condition is applied: we check whether the command is registered or not before executing
     def Execute_Command(self, command_name: str, *args):
         '''Executes a registered command if exists'''
         if command_name in self.commands:
