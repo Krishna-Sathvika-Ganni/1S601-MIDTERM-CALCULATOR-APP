@@ -18,7 +18,7 @@ class App:
         if command is None:
             command = CommandHandler()
         self.command_handler = command
-        self.load_plugins()  # This automatically loads the plugins
+        self.load_commands()
         os.makedirs('logs',exist_ok=True)
         self.configuring_logging()
 
