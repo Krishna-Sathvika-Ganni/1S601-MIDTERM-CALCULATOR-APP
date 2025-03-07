@@ -1,6 +1,7 @@
 import inspect
 import pkgutil
 import importlib
+from app.Factory.Command_Factory import CommandFactory
 from app.commands import CommandHandler, Command
 import logging
 import sys
@@ -30,28 +31,17 @@ class App:
             logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
             logger.info("Logging configured")
 
-    # Here I have applied EAFP ( Easier to Ask for Forgiveness than Permission ) condition: Performs the operations and handles the errors if they occur
-    def load_plugins(self):
-        '''This dynamically loads the plugins'''
-        plugins_package = "app.plugins"  
-        for _, plugin_name, _ in pkgutil.iter_modules([plugins_package.replace(".","/")]):  
+    def load_commands(self):
+        available_commands=["menu", "add", "subtract", "multiply", "divide", "savehistory", "loadhistory", "clearhistory", "deletehistory"]
+
+        for cmd in available_commands:
             try:
-                plugin_module = importlib.import_module(f"{plugins_package}.{plugin_name}")
-                logger.info("Attempting to load plugin")
-                for item_name in dir(plugin_module):
-                    item = getattr(plugin_module, item_name)
-                    if isinstance(item, type) and issubclass(item, Command) and item is not Command:
-                        init_signature=inspect.signature(item.__init__)
-                        if len(init_signature.parameters)>1:
-                            if plugin_name.replace("_command", "") not in self.command_handler.commands:
-                                self.command_handler.Register_Command(plugin_name.replace("command", "").strip("_"), item(self.command_handler))
-                        else:
-                            if plugin_name.replace("_command", "") not in self.command_handler.commands:
-                                self.command_handler.Register_Command(plugin_name.replace("command", "").strip("_"), item())
+                command_instance=CommandFactory.Create_Command(cmd, self.command_handler)
+                self.command_handler.Register_Command(cmd, command_instance)
+                logger.info(f"Command Registered is {cmd}")
             
-            except Exception as e:
-                logger.error("Failed to load plugin")
-                print(f"Failed to load plugin {plugin_name}: {e}")
+            except ValueError:
+                logger.warning(f"Umknown Command")
 
     # Here I have applied EAFP ( Easier to Ask for Forgiveness than Permission ) condition: Performs the operations and handles the errors if they occur
     def start(self):
