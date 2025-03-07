@@ -1,10 +1,6 @@
-import inspect
-import pkgutil
-import importlib
 from app.Factory.Command_Factory import CommandFactory
-from app.commands import CommandHandler, Command
+from app.commands import CommandHandler
 import logging
-import sys
 import os
 import logging
 import logging.config
@@ -17,14 +13,16 @@ class App:
 
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
-            cls._instance = super(App, cls).__new__(cls, *args, **kwargs)
+            cls._instance = super(App, cls).__new__(cls)
+            cls._instance.initialized=False
         return cls._instance
 
     def __init__(self, command=None):
-        if not hasattr(self, 'initialized'):
+        if not self.initialized:
             if command is None:
-                command = CommandHandler()
-        self.command_handler = command
+                self.command_handler = CommandHandler()
+            else:
+                self.command_handler = command
         self.load_commands()
         os.makedirs('logs',exist_ok=True)
         self.configuring_logging()
