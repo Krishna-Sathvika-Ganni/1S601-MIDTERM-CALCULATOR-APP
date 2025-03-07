@@ -36,7 +36,7 @@ class App:
 
         for cmd in available_commands:
             try:
-                command_instance=CommandFactory.Create_Command(cmd, self.command_handler)
+                command_instance=CommandFactory.create_command(cmd, self.command_handler)
                 self.command_handler.Register_Command(cmd, command_instance)
                 logger.info(f"Command Registered is {cmd}")
             

@@ -22,9 +22,9 @@ class CommandFactory:
         "menu": Menu,
     }
     
-@staticmethod
-def Create_Command(command_name, command_handler):
-    command_class=CommandFactory._commands.get(command_name.lower())
-    if command_class:
-        return command_class(command_handler)
-    raise ValueError("Unknown command")
+    @staticmethod
+    def create_command(command_name, command_handler):
+        command_class=CommandFactory._commands.get(command_name.lower())
+        if command_class:
+            return command_class(command_handler)
+        raise ValueError("Unknown command")
