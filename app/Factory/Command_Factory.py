@@ -9,6 +9,7 @@ from app.plugins.deletehistorycommand import DeleteHistory
 from app.plugins.menucommand import Menu
 
 class CommandFactory:
+    _instance = None
 
     _commands = {
         "add": Add,
@@ -23,6 +24,11 @@ class CommandFactory:
     }
     
     @staticmethod
+    def get_instance():
+        if CommandFactory._instance is None:
+            CommandFactory._instance=CommandFactory()
+        return CommandFactory._instance
+    
     def create_command(command_name, command_handler):
         command_class=CommandFactory._commands.get(command_name.lower())
         if command_class:
