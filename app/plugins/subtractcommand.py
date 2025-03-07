@@ -20,6 +20,7 @@ class Subtract(Command):
             print("Only two arguments must be given.")
             return
 
+        # Here I have applied EAFP ( Easier to Ask for Forgiveness than Permission ) condition: Performs the operations and handles the errors if they occur
         try:
             x, y = map(Decimal, args)  
             result = Calculator.subtract(x, y)

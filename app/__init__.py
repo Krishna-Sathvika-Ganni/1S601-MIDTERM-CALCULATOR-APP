@@ -30,6 +30,7 @@ class App:
             logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
             logger.info("Logging configured")
 
+    # Here I have applied EAFP ( Easier to Ask for Forgiveness than Permission ) condition: Performs the operations and handles the errors if they occur
     def load_plugins(self):
         '''This dynamically loads the plugins'''
         plugins_package = "app.plugins"  
@@ -52,6 +53,7 @@ class App:
                 logger.error("Failed to load plugin")
                 print(f"Failed to load plugin {plugin_name}: {e}")
 
+    # Here I have applied EAFP ( Easier to Ask for Forgiveness than Permission ) condition: Performs the operations and handles the errors if they occur
     def start(self):
         print("WELCOME TO THE CALCULATOR PROGRAM!!\n --> Type 'Menu' to see available commands. \n --> Type 'Exit' to quit.")
         while True:
