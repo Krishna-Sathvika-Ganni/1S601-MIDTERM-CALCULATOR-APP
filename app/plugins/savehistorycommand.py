@@ -1,9 +1,10 @@
 from app.commands import Command,CommandHandler
-from app.History.Managing_History import History_Manager
+from app.History.Facade_History import HistoryFacade 
 
 class SaveHistory(Command):
     def __init__(self, command_handler=None):
         self.command_handler=command_handler
+        self.history_facade=HistoryFacade()
         
     def execute(self):
-        History_Manager.saving_history()
+        self.history_facade.save_history()
