@@ -13,14 +13,22 @@ logger=logging.getLogger(__name__)
 
 class App:
     '''This is the App class'''
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super(App, cls).__new__(cls, *args, **kwargs)
+        return cls._instance
 
     def __init__(self, command=None):
-        if command is None:
-            command = CommandHandler()
+        if not hasattr(self, 'initialized'):
+            if command is None:
+                command = CommandHandler()
         self.command_handler = command
         self.load_commands()
         os.makedirs('logs',exist_ok=True)
         self.configuring_logging()
+        self.initialized=True
 
     def configuring_logging(self):
         logging_conf_path='logging.conf'
