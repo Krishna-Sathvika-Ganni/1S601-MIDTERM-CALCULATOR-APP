@@ -1,3 +1,4 @@
+'''This is the Command_factory file'''
 from app.plugins.addcommand import Add
 from app.plugins.subtractcommand import Subtract
 from app.plugins.multiplycommand import Multiply
@@ -22,7 +23,7 @@ class CommandFactory:
         "deletehistory": DeleteHistory,
         "menu": Menu,
     }
-    
+    '''The get_instance function'''
     @staticmethod
     def get_instance():
         if CommandFactory._instance is None:

@@ -59,3 +59,6 @@ jobs:
     - name: Running tests with coverage
       run: |
         pytest --pylint --cov
+
+    - name: Run tests and Coverage
+      run: pytest --cov=app --cov-fail-under=90
