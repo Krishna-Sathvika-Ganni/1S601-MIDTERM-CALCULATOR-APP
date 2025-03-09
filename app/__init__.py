@@ -4,7 +4,9 @@ import logging
 import os
 import logging
 import logging.config
-from dotenv import load_dotenv 
+from dotenv import load_dotenv
+
+from config import CONFIG 
 
 logger=logging.getLogger(__name__)
 
@@ -30,18 +32,26 @@ class App:
         load_dotenv()
         self.initialized=True
 
+        logger.info(f"App initialized with environment: {CONFIG['environment']}")
+        logger.info(f"Log level set to: {CONFIG['log_level']}")
+
     def configuring_logging(self):
-        log_level = os.getenv('LOG_LEVEL', 'INFO').upper()  
-        log_output_file = os.getenv('LOG_OUTPUT_FILE', None) 
-
-        log_format = '%(asctime)s - %(levelname)s - %(message)s'
-
-        if log_output_file:
-            logging.basicConfig(level=log_level, format=log_format, filename=log_output_file)
+        logging_conf_path='logging.conf'
+        if os.path.exists(logging_conf_path):
+            logging.config.fileConfig(logging_conf_path, disable_existing_loggers=False)
+            logger.info("Configured")
         else:
-            logging.basicConfig(level=log_level, format=log_format)
+            level = getattr(logging, CONFIG['log_level'].upper(), logging.INFO)
+            logging.basicConfig(
+                level=level, 
+                format='%(asctime)s - %(levelname)s - %(message)s',
+                handlers=[
+                    logging.FileHandler('logs/app.log'),
+                    logging.StreamHandler()
+                ]
+            )
+            logger.info("Logging configured")
 
-        logger.info("Logging is configured")
 
     def load_commands(self):
         available_commands=["menu", "add", "subtract", "multiply", "divide", "savehistory", "loadhistory", "clearhistory", "deletehistory"]

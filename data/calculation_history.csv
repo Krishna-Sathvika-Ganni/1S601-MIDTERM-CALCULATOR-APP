@@ -1,2 +1,4 @@
 x,y,operation,result
 4,3,subtract,1
+4,5,add,9
+5,7,subtract,-2

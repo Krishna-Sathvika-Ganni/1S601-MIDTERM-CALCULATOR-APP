@@ -1,8 +1,10 @@
-# config.py
 import os
+from dotenv import load_dotenv
 
-def get_log_level():
-    return os.getenv('LOG_LEVEL', 'INFO').upper()
+load_dotenv()
 
-def get_log_output_file():
-    return os.getenv('LOG_OUTPUT_FILE', None)
+CONFIG = {
+    'environment': os.getenv('ENVIRONMENT', 'development'),
+    'log_level': os.getenv('LOG_LEVEL', 'DEBUG'),
+    'history_file': os.getenv('HISTORY_FILE', 'data/calculation_history.csv')
+}

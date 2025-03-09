@@ -2,11 +2,12 @@ import os
 import logging
 import pandas as pd
 from app.calculator.calculations import Calculations
+from config import CONFIG 
 
 logger = logging.getLogger(__name__)
 
 class History_Manager:
-    HISTORY_FILE="data/calculation_history.csv"
+    HISTORY_FILE=CONFIG['history_file']
 
     @classmethod
     def saving_history(cls):

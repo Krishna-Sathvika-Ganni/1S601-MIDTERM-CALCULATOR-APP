@@ -32,9 +32,10 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Setting Environment variables
-      run:  |
-        echo "SECRET_KEY=${{secrets.SECRET_KEY}}" >> $GITHUB_ENV
-        echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
+      run: |
+          echo "ENVIRONMENT=development" >> $GITHUB_ENV
+          echo "LOG_LEVEL=DEBUG" >> $GITHUB_ENV
+          echo "HISTORY_FILE=data/calculation_history.csv" >> $GITHUB_ENV
 
     - name: Creating logs directory
       run: |
