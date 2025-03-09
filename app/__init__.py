@@ -28,26 +28,20 @@ class App:
         os.makedirs('logs',exist_ok=True)
         self.configuring_logging()
         load_dotenv()
-        self.settings=self.load_environment_variables()
-        self.settings.setdefault('DEBUG')
         self.initialized=True
 
     def configuring_logging(self):
-        logging_conf_path='logging.conf'
-        if os.path.exists(logging_conf_path):
-            logging.config.fileConfig(logging_conf_path, disable_existing_loggers=False)
-            logger.info("Configured")
-        else:
-            logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-            logger.info("Logging configured")
+        log_level = os.getenv('LOG_LEVEL', 'INFO').upper()  
+        log_output_file = os.getenv('LOG_OUTPUT_FILE', None) 
 
-    def load_environment_variables(self):
-        settings={key:value for key, value in os.environ.items()}
-        logger.info("Loaded")
-        return settings
-    
-    def get_environment_variables(self, env_var: str='DEBUG'):
-        return self.settings.get(env_var, None)
+        log_format = '%(asctime)s - %(levelname)s - %(message)s'
+
+        if log_output_file:
+            logging.basicConfig(level=log_level, format=log_format, filename=log_output_file)
+        else:
+            logging.basicConfig(level=log_level, format=log_format)
+
+        logger.info("Logging is configured")
 
     def load_commands(self):
         available_commands=["menu", "add", "subtract", "multiply", "divide", "savehistory", "loadhistory", "clearhistory", "deletehistory"]
