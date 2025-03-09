@@ -1,3 +1,4 @@
+'''Registering and executing Commands functions'''
 from abc import ABC, abstractmethod
 import logging
 
@@ -6,13 +7,10 @@ logger = logging.getLogger(__name__)
 
 class Command(ABC):
     '''This is the abstract base for commands.'''
-    
-    '''Used abstract method'''
-    
     @abstractmethod
     def execute(self,*args):
         pass
-
+'''CommandHandler'''
 class CommandHandler:
     '''This is the CommandHandler class.'''
     def __init__(self):
