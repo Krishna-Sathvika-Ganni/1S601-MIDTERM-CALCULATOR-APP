@@ -4,3 +4,4 @@
 *__pycache__
 vir_env/
 logs
+.env 
