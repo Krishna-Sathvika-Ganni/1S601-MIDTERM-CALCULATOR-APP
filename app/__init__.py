@@ -4,6 +4,7 @@ import logging
 import os
 import logging
 import logging.config
+from dotenv import load_dotenv 
 
 logger=logging.getLogger(__name__)
 
@@ -26,6 +27,9 @@ class App:
         self.load_commands()
         os.makedirs('logs',exist_ok=True)
         self.configuring_logging()
+        load_dotenv()
+        self.settings=self.load_environment_variables()
+        self.settings.setdefault('DEBUG')
         self.initialized=True
 
     def configuring_logging(self):
@@ -36,6 +40,14 @@ class App:
         else:
             logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
             logger.info("Logging configured")
+
+    def load_environment_variables(self):
+        settings={key:value for key, value in os.environ.items()}
+        logger.info("Loaded")
+        return settings
+    
+    def get_environment_variables(self, env_var: str='DEBUG'):
+        return self.settings.get(env_var, None)
 
     def load_commands(self):
         available_commands=["menu", "add", "subtract", "multiply", "divide", "savehistory", "loadhistory", "clearhistory", "deletehistory"]
