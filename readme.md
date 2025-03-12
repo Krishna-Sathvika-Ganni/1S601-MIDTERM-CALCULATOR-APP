@@ -103,6 +103,8 @@ https://github.com/user-attachments/assets/d46c54f8-8171-441f-8e04-46143ccccc6c
 
 ##### 1. **Save History:**
 -  This stores the history of operations performed.
+-  The History is saved to a CSV file.
+-  If there is no history to save, it displays "No history to save" when executed Savehistory.
 
 [Click to view code](./app/plugins/savehistorycommand.py)
 
@@ -110,9 +112,12 @@ Video:
 
 https://github.com/user-attachments/assets/e1c55528-510b-441d-a39e-0724145a3f2b
 
+[Click to view the saved history file](./data/calculation_history.csv)
 
 ##### 2. **Load History:**
 -  This loads the history of operations performed.
+-  The saved history file is displayed when executed loadhistory.
+-  When there is no history saved, it displays "no History found".
 
 [Click to view code](./app/plugins/loadhistorycommand.py)
 
@@ -123,6 +128,7 @@ https://github.com/user-attachments/assets/57690175-aaf2-432a-859e-577575e162c7
 
 ##### 3. **Clear History:**
 -  This clears only in-memory history of operations performed.
+-  If there is no in-memory, it displays "No history found to clear" when executed clearhistory. 
 
 [Click to view code](./app/plugins/clearhistorycommand.py)
 
@@ -133,6 +139,7 @@ https://github.com/user-attachments/assets/bba3b243-4913-4b8c-83c6-fff7346e5e67
 
 ##### 4. **Delete History:**
 -  This delete the history of operations performed.
+-  If there is no saved history, it displays "No history found to delete" when executed deletehistory.
 
 [Click to view code](./app/plugins/historycommand.py)
 
@@ -145,7 +152,7 @@ https://github.com/user-attachments/assets/a4675570-2d6e-44d9-a61a-4a27103b3f64
 
 - The plugin folder contains the commands folders to execute the operations.
 
-[Click to view code](.app/plugins/__init__.py)
+[Click to view code](./app/plugins/__init__.py)
 
 
 ## **2. PLUGIN SYSTEM**
@@ -159,7 +166,7 @@ https://github.com/user-attachments/assets/a4675570-2d6e-44d9-a61a-4a27103b3f64
 - When "menu" is given as input, it displays all the available registered commands.
 - If there are no commands registered, when given menu it displays "No commands available"
 
-[Click to view code](.app/plugins/menucommand.py)
+[Click to view code](./app/plugins/menucommand.py)
 
 Video:
 
@@ -167,5 +174,15 @@ https://github.com/user-attachments/assets/c6cb2c72-c9ba-412d-8518-4fdfafba3827
 
 
 
+## **3. CALCULATION HISTORY MANAGEMENT WITH PANDAS**
 
+- The calculation history is managed using Pandas efficiently.
+
+[Click to view code](./app/History/Managing_History.py)
+
+- Using pandas, we can perform the following through REPL:
+    - [Save the History](#1-save-history)
+    - [Load the History](#2-load-history)
+    - [Clear the History](#3-clear-history)
+    - [Delete the History](#4-delete-history)
 
