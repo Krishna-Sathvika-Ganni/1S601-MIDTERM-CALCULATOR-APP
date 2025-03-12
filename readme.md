@@ -7,12 +7,12 @@
 THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING: 
 
 1. [COMMAND - LINE INTERFACE ( REPL )](#1-command-line-interface--repl-) <br/>
-    - [Execution of Arithmetic operations:](#execution-of-arithmetic-operations) <br/>
+    - [Execution of Arithmetic operations:](#-execution-of-arithmetic-operations-performs-add-subtract-multiply-and-divide-operations) <br/>
         - [Addition](#1-addition) <br/>
         - [Subtraction](#2-subtraction) <br/>
         - [Multiplication](#3-multiplication) <br/>
         - [Division](#4-division) <br/>
-    - [History Management:](#-history-management-)
+    - [History Management:](#-history-management-saves-loads-clears-and-deletes-the-operations-performed)
 2. PLUGIN SYSTEM <br/>
 3. CALCULATION HISTORY MANAGEMENT WITH PANDAS <br/>
 4. PROFESSIONAL LOGGING PRACTICES <br/>
@@ -133,5 +133,12 @@ https://github.com/user-attachments/assets/bba3b243-4913-4b8c-83c6-fff7346e5e67
 Video:
 
 https://github.com/user-attachments/assets/a4675570-2d6e-44d9-a61a-4a27103b3f64
+
+
+#### ~ Plugin System: The functionalities are dynamically loaded through plugins.
+
+- The plugin folder contains the commands folders to execute the operations.
+
+[Click to view code](.app/plugins)
 
 
