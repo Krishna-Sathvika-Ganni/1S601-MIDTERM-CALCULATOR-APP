@@ -1,4 +1,4 @@
-'''Registering and executing Commands functions'''
+# disable=trailing-whitespace, missing-final-newline, missing-docstring
 from abc import ABC, abstractmethod
 import logging
 
@@ -10,13 +10,13 @@ class Command(ABC):
     @abstractmethod
     def execute(self,*args):
         pass
-'''CommandHandler'''
+
 class CommandHandler:
     '''This is the CommandHandler class.'''
     def __init__(self):
         self.commands={}
     
-    def Register_Command(self, command_name: str, command: Command):
+    def register_command(self, command_name: str, command: Command):
         '''This function registers a command.'''
         if command_name in self.commands:
             logger.warning(f"Command '{command_name}' is already registered.")
@@ -25,7 +25,7 @@ class CommandHandler:
         self.commands[command_name] = command
     
     # Here is also LBYL condition is applied: we check whether the command is registered or not before executing
-    def Execute_Command(self, command_name: str, *args):
+    def execute_command(self, command_name: str, *args):
         '''Executes a registered command if exists'''
         if command_name in self.commands:
             try:

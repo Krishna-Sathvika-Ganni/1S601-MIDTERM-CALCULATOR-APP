@@ -6,11 +6,11 @@ from config import CONFIG
 
 logger = logging.getLogger(__name__)
 
-class History_Manager:
+class history_manager:
     HISTORY_FILE=CONFIG['history_file']
 
     @classmethod
-    def saving_history(cls):
+    def save_history(cls):
         history=Calculations.get_history()
         if not history:
             print("There is no history to save")
