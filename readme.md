@@ -29,4 +29,7 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
 
 [Code: ](./app/plugins/addcommand.py)
 
-[Video: ]
+[Video: ] 
+
+https://github.com/user-attachments/assets/503c071c-851a-43bc-ad48-b1bfd5a3af02
+
