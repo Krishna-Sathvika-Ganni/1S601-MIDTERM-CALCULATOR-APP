@@ -5,7 +5,6 @@ import os
 import logging
 import logging.config
 from dotenv import load_dotenv
-
 from config import CONFIG 
 
 logger=logging.getLogger(__name__)
@@ -59,7 +58,7 @@ class App:
         for cmd in available_commands:
             try:
                 command_instance=CommandFactory.create_command(cmd, self.command_handler)
-                self.command_handler.Register_Command(cmd, command_instance)
+                self.command_handler.register_command(cmd, command_instance)
                 logger.info(f"Command Registered is {cmd}")
             
             except ValueError:
@@ -80,7 +79,7 @@ class App:
                 args = user_input_split[1:]
 
                 command_name=command_name.lower()
-                if not self.command_handler.Execute_Command(command_name, *args):
+                if not self.command_handler.execute_command(command_name, *args):
                     logger.warning(f"Unknown command: {command_name}")
                     print(f"Error: '{command_name}' is not a registered command")
             
