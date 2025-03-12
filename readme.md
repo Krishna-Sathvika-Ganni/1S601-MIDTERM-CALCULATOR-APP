@@ -131,3 +131,7 @@ https://github.com/user-attachments/assets/bba3b243-4913-4b8c-83c6-fff7346e5e67
 [Click to view code](./app/plugins/deletehistorycommand.py)
 
 Video:
+
+https://github.com/user-attachments/assets/a4675570-2d6e-44d9-a61a-4a27103b3f64
+
+
