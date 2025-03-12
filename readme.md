@@ -7,13 +7,19 @@
 THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING: 
 
 1. [COMMAND - LINE INTERFACE ( REPL )](#1-command-line-interface--repl-) <br/>
-    - [Execution of Arithmetic operations:](#-execution-of-arithmetic-operations-performs-add-subtract-multiply-and-divide-operations) <br/>
+    - [Execution of Arithmetic operations](#-execution-of-arithmetic-operations-performs-add-subtract-multiply-and-divide-operations) <br/>
         - [Addition](#1-addition) <br/>
         - [Subtraction](#2-subtraction) <br/>
         - [Multiplication](#3-multiplication) <br/>
         - [Division](#4-division) <br/>
-    - [History Management:](#-history-management-saves-loads-clears-and-deletes-the-operations-performed)
-2. PLUGIN SYSTEM <br/>
+    - [History Management](#-history-management-saves-loads-clears-and-deletes-the-operations-performed)
+        - [Save History](#1-save-history)
+        - [Load History](#2-load-history)
+        - [Clear History](#3-clear-history)
+        - [Delete History](#4-delete-history)
+    - [Plugin System](#-plugin-system-the-functionalities-are-dynamically-loaded-through-plugins)
+2. [PLUGIN SYSTEM](#2-plugin-system) <br/>
+    - [Menu Command](#-menu-command)
 3. CALCULATION HISTORY MANAGEMENT WITH PANDAS <br/>
 4. PROFESSIONAL LOGGING PRACTICES <br/>
 5. ADVANCED DATA HANDLING WITH PANDAS <br/>
@@ -139,6 +145,26 @@ https://github.com/user-attachments/assets/a4675570-2d6e-44d9-a61a-4a27103b3f64
 
 - The plugin folder contains the commands folders to execute the operations.
 
-[Click to view code](.app/plugins)
+[Click to view code](.app/plugins/__init__.py)
+
+
+## **2. PLUGIN SYSTEM**
+- [Menu Command](#-menu-command)
+
+- Implemented plugins architecture to extend the capabilities of the functionalities without making changes to the core application.
+- The commands are loaded and integrated dynamically with plugins without modifying the application code.
+
+#### ~ Menu Command:
+
+- The Menu command lists all the available plugin commands.
+- When "menu" is given as input, it displays all the available registered commands.
+- If there are no commands registered, when given menu it displays "No commands available"
+
+[Click to view code](.app/plugins/menucommand.py)
+
+Video:
+
+
+
 
 
