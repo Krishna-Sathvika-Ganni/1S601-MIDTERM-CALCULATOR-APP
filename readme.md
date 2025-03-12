@@ -12,7 +12,7 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
         - [Subtraction](#2-subtraction) <br/>
         - [Multiplication](#3-multiplication) <br/>
         - [Division](#4-division) <br/>
-    - [History Management:]
+    - [History Management:](#-history-management-)
 2. PLUGIN SYSTEM <br/>
 3. CALCULATION HISTORY MANAGEMENT WITH PANDAS <br/>
 4. PROFESSIONAL LOGGING PRACTICES <br/>
@@ -92,8 +92,8 @@ https://github.com/user-attachments/assets/d46c54f8-8171-441f-8e04-46143ccccc6c
 
 - [Save History](#1-save-history)
 - [Load History](#2-load-history)
-- [Clear History]
-- [Delete History]
+- [Clear History](#3-clear-history)
+- [Delete History](#4-delete-history)
 
 ##### 1. **Save History:**
 -  This stores the history of operations performed.
@@ -128,7 +128,7 @@ https://github.com/user-attachments/assets/bba3b243-4913-4b8c-83c6-fff7346e5e67
 ##### 4. **Delete History:**
 -  This delete the history of operations performed.
 
-[Click to view code](./app/plugins/deletehistorycommand.py)
+[Click to view code](./app/plugins/historycommand.py)
 
 Video:
 
