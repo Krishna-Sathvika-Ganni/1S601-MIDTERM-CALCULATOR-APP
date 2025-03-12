@@ -6,9 +6,9 @@
 
 THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING: 
 
-[1. COMMAND - LINE INTERFACE ( REPL )](#1-command-line-interface--repl-) <br/>
-[- Execution of Arithmetic operations:](#execution-of-arithmetic-operations) <br/>
-    [ - Addition](#1-addition) <br/>
+1. [COMMAND - LINE INTERFACE ( REPL )](#1-command-line-interface--repl-) <br/>
+    - [Execution of Arithmetic operations:](#execution-of-arithmetic-operations) <br/>
+        - [ Addition](#1-addition) <br/>
     [ - Subtraction](#2-subtraction) <br/>
     [ - Multiplication](#3-multiplication) <br/>
     [ - Division](#4-division) <br/>
