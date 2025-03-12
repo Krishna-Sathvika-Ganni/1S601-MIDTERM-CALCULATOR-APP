@@ -45,11 +45,18 @@ https://github.com/user-attachments/assets/31b50d6f-e655-4c11-82dd-917fd73601ad
 
 [Click to view Code](./app/plugins/subtractcommand.py)
 
-
 Video:
+ttps://github.com/user-attachments/assets/7ef00c91-a9cf-425b-ab3f-2f6ccd7d2e4e
+
+
+3. **Multiplication:** 
+- Product of Two numbers is performed. 
+- Errors are handled using try & except block if arises. 
+- The program is designed to take two arguments and raises a error if more than two are given. 
+- The user is asked for input, if arguments are not given.
+
+[Click to view Code](./app/plugins/subtractcommand.py)
+
+Video: 
 
 https://github.com/user-attachments/assets/7ef00c91-a9cf-425b-ab3f-2f6ccd7d2e4e
-
-
-
-
