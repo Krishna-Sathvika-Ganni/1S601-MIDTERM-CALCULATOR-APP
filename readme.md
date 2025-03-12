@@ -149,7 +149,6 @@ https://github.com/user-attachments/assets/a4675570-2d6e-44d9-a61a-4a27103b3f64
 
 
 ## **2. PLUGIN SYSTEM**
-- [Menu Command](#-menu-command)
 
 - Implemented plugins architecture to extend the capabilities of the functionalities without making changes to the core application.
 - The commands are loaded and integrated dynamically with plugins without modifying the application code.
@@ -163,6 +162,8 @@ https://github.com/user-attachments/assets/a4675570-2d6e-44d9-a61a-4a27103b3f64
 [Click to view code](.app/plugins/menucommand.py)
 
 Video:
+
+https://github.com/user-attachments/assets/c6cb2c72-c9ba-412d-8518-4fdfafba3827
 
 
 
