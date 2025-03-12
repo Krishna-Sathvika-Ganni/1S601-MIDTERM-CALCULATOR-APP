@@ -8,10 +8,11 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
 
 1. [COMMAND - LINE INTERFACE ( REPL )](#1-command-line-interface--repl-) <br/>
     - [Execution of Arithmetic operations:](#execution-of-arithmetic-operations) <br/>
-        - [ Addition](#1-addition) <br/>
-    [ - Subtraction](#2-subtraction) <br/>
-    [ - Multiplication](#3-multiplication) <br/>
-    [ - Division](#4-division) <br/>
+        - [Addition](#1-addition) <br/>
+        - [Subtraction](#2-subtraction) <br/>
+        - [Multiplication](#3-multiplication) <br/>
+        - [Division](#4-division) <br/>
+    - [History Management:]
 2. PLUGIN SYSTEM <br/>
 3. CALCULATION HISTORY MANAGEMENT WITH PANDAS <br/>
 4. PROFESSIONAL LOGGING PRACTICES <br/>
@@ -24,12 +25,12 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
 
 ~ The **Read-Eval-Print Loop (REPL)** is used for direct interaction with the calculator in real-time. REPL is used for: 
 
-#### Execution of Arithmetic operations:
+#### ~ Execution of Arithmetic operations: Performs add, subtract, multiply and divide operations.
 
-[ - Addition](#1-addition) <br/>
-[ - Subtraction](#2-subtraction) <br/>
-[ - Multiplication](#3-multiplication) <br/>
-[ - Division](#4-division) <br/>
+- [Addition](#1-addition) <br/>
+- [Subtraction](#2-subtraction) <br/>
+- [Multiplication](#3-multiplication) <br/>
+- [Division](#4-division) <br/>
 
 
 ##### 1. **Addition:** 
@@ -85,6 +86,21 @@ https://github.com/user-attachments/assets/64be29b5-f0a3-4a6a-b773-1077c05bf247
 Video: 
 
 https://github.com/user-attachments/assets/d46c54f8-8171-441f-8e04-46143ccccc6c
+
+
+#### ~ History Management: Saves, loads, clears and deletes the operations performed.
+
+- [Save History](#1-save-history)
+- [Load History]
+- [Clear History]
+- [Delete History]
+
+##### 1. **Save History:**
+-  This stores the history of operations performed.
+
+[Click to view code](./app/plugins/savehistorycommand.py)
+
+Video:
 
 
 
