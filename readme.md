@@ -178,13 +178,17 @@ https://github.com/user-attachments/assets/c6cb2c72-c9ba-412d-8518-4fdfafba3827
 
 - The calculation history is managed using Pandas efficiently.
 
-''' import pandas as pd
+''' 
+
+'import pandas as pd'
     data=pd.DataFrame([
             {"x":calc.x, "y":calc.y, "operation":calc.operation.__name__, "result":calc.perform()} 
             for calc in history
         ])
     file_exists = os.path.exists(cls.HISTORY_FILE)
-    data.to_csv(cls.HISTORY_FILE, mode='a', header=not file_exists, index=False) '''
+    data.to_csv(cls.HISTORY_FILE, mode='a', header=not file_exists, index=False) 
+    
+'''
 
 [Click to view code](./app/History/Managing_History.py)
 
