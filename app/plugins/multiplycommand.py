@@ -23,7 +23,7 @@ class Multiply(Command):
         try:
             x, y = map(Decimal, args)  
             result = Calculator.multiply(x, y)
-            logger.info("Addition operation is being done")
+            logger.info("Multiplication operation is being done")
             print(f"{x} x {y} = {result}")
         except InvalidOperation:
             logger.error("Invalid arguments given")
