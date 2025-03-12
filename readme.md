@@ -45,3 +45,11 @@ https://github.com/user-attachments/assets/31b50d6f-e655-4c11-82dd-917fd73601ad
 
 [Click to view Code](./app/plugins/subtractcommand.py)
 
+Video:
+
+
+https://github.com/user-attachments/assets/228c26ff-0ab4-41c7-8819-12ec7e974daa
+
+
+
+
