@@ -19,9 +19,14 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
 
 ~ The **Read-Eval-Print Loop (REPL)** is used for direct interaction with the calculator in real-time. REPL is used for: 
 
-##### Execution of Arithmetic operations:
+#### Execution of Arithmetic operations:
 
-1. **Addition:** 
+[ - Addition](#1-addition)
+[ - Subtraction](#2-subtraction)
+[ - Multiplication](#3-multiplication)
+
+
+##### 1. **Addition:** 
 - Sum of Two numbers is performed. 
 - Errors are handled using try & except block if arises. 
 - The program is designed to take two arguments and raises a error if more than two are given. 
@@ -37,7 +42,7 @@ https://github.com/user-attachments/assets/31b50d6f-e655-4c11-82dd-917fd73601ad
 
 
 
-2. **Subtraction:** 
+##### 2. **Subtraction:** 
 - Difference of Two numbers is performed. 
 - Errors are handled using try & except block if arises. 
 - The program is designed to take two arguments and raises a error if more than two are given. 
@@ -50,7 +55,7 @@ Video:
 https://github.com/user-attachments/assets/7ef00c91-a9cf-425b-ab3f-2f6ccd7d2e4e
 
 
-3. **Multiplication:** 
+##### 3. **Multiplication:** 
 - Product of Two numbers is performed. 
 - Errors are handled using try & except block if arises. 
 - The program is designed to take two arguments and raises a error if more than two are given. 
