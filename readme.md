@@ -21,18 +21,27 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
 
 ##### Execution of Arithmetic operations:
 
-1. **Add:** 
+1. **Addition:** 
 - Sum of Two numbers is performed. 
 - Errors are handled using try & except block if arises. 
 - The program is designed to take two arguments and raises a error if more than two are given. 
 - The user is asked for input, if arguments are not given.
 
-[Code: ](./app/plugins/addcommand.py)
+[Click to view Code](./app/plugins/addcommand.py)
 
-[Video: ] 
+Video:  
 
 https://github.com/user-attachments/assets/31b50d6f-e655-4c11-82dd-917fd73601ad
 
 
 
+
+
+2. **Subtraction:** 
+- Difference of Two numbers is performed. 
+- Errors are handled using try & except block if arises. 
+- The program is designed to take two arguments and raises a error if more than two are given. 
+- The user is asked for input, if arguments are not given.
+
+[Click to view Code](./app/plugins/subtractcommand.py)
 
