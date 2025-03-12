@@ -91,7 +91,7 @@ https://github.com/user-attachments/assets/d46c54f8-8171-441f-8e04-46143ccccc6c
 #### ~ History Management: Saves, loads, clears and deletes the operations performed.
 
 - [Save History](#1-save-history)
-- [Load History]
+- [Load History](#2-load-history)
 - [Clear History]
 - [Delete History]
 
@@ -103,6 +103,15 @@ https://github.com/user-attachments/assets/d46c54f8-8171-441f-8e04-46143ccccc6c
 Video:
 
 https://github.com/user-attachments/assets/e1c55528-510b-441d-a39e-0724145a3f2b
+
+
+##### 2. **Load History:**
+-  This loads the history of operations performed.
+
+[Click to view code](./app/plugins/loadhistorycommand.py)
+
+Video:
+
 
 
 
