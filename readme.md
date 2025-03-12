@@ -179,9 +179,6 @@ https://github.com/user-attachments/assets/c6cb2c72-c9ba-412d-8518-4fdfafba3827
 - The calculation history is managed using Pandas efficiently.
 
 ''' 
-    import pandas as pd
-'''
-'''
     data=pd.DataFrame([
             {"x":calc.x, "y":calc.y, "operation":calc.operation.__name__, "result":calc.perform()} 
             for calc in history
