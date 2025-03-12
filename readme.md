@@ -116,7 +116,7 @@ https://github.com/user-attachments/assets/57690175-aaf2-432a-859e-577575e162c7
 
 
 ##### 3. **Clear History:**
--  This clears the history of operations performed.
+-  This clears only in-memory history of operations performed.
 
 [Click to view code](./app/plugins/clearhistorycommand.py)
 
@@ -125,4 +125,9 @@ Video:
 https://github.com/user-attachments/assets/bba3b243-4913-4b8c-83c6-fff7346e5e67
 
 
+##### 4. **Delete History:**
+-  This delete the history of operations performed.
 
+[Click to view code](./app/plugins/deletehistorycommand.py)
+
+Video:
