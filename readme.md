@@ -78,3 +78,8 @@ https://github.com/user-attachments/assets/64be29b5-f0a3-4a6a-b773-1077c05bf247
 [Click to view Code](./app/plugins/dividecommand.py)
 
 Video: 
+
+https://github.com/user-attachments/assets/d46c54f8-8171-441f-8e04-46143ccccc6c
+
+
+
