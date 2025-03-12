@@ -20,8 +20,8 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
     - [Plugin System](#-plugin-system-the-functionalities-are-dynamically-loaded-through-plugins)
 2. [PLUGIN SYSTEM](#2-plugin-system) <br/>
     - [Menu Command](#-menu-command)
-3. CALCULATION HISTORY MANAGEMENT WITH PANDAS <br/>
-4. PROFESSIONAL LOGGING PRACTICES <br/>
+3. [CALCULATION HISTORY MANAGEMENT WITH PANDAS](#3-calculation-history-management-with-pandas) <br/>
+4. [PROFESSIONAL LOGGING PRACTICES](#4-professional-logging-practices) <br/>
 5. ADVANCED DATA HANDLING WITH PANDAS <br/>
 6. DESIGN PATTERNS FOR SCALABLE ARCHITECTURE <br/>
 7. CONFIGURATION VIA ENVIRONMENT VARIABLES <br/>
@@ -200,6 +200,23 @@ https://github.com/user-attachments/assets/c6cb2c72-c9ba-412d-8518-4fdfafba3827
  Video:
 
 https://github.com/user-attachments/assets/a51f2732-b01c-4c30-b4b5-62d99bcaa071
+
+
+## **4. PROFESSIONAL LOGGING PRACTICES**
+
+- A comprehensive logging system is implemented to record detailed application operations, data manipulations, errors and informational messages.
+- The severity of messages is differentiated as INFO, WARNING, ERROR.
+    - INFO: Logs general events
+    - WARNING: Logs potential issues
+    - ERROR: Logs errors and exceptions.
+``` 
+   logging.info("Enter two numbers:")
+   logging.error("Invalid inputs")
+   logging.WARNING("Cannot be divided by zero")
+``` 
+- Created a Configuration file for the logging system.
+- Created dynamic logging configuration through environment variables for levels and output destinations.  
+
 
 
 
