@@ -215,7 +215,12 @@ https://github.com/user-attachments/assets/a51f2732-b01c-4c30-b4b5-62d99bcaa071
    logging.WARNING("Cannot be divided by zero")
 ``` 
 - Created a Configuration file for the logging system.
-- Created dynamic logging configuration through environment variables for levels and output destinations.  
+- Created dynamic logging configuration through environment variables for levels and output destinations.
+
+Video:
+
+https://github.com/user-attachments/assets/70f84547-735b-4a8e-8057-ac67d0c854ba
+
 
 
 
