@@ -331,6 +331,10 @@ Source: https://refactoring.guru/design-patterns/strategy
 
 - To manage the settings dynamically, environment variables are used.
 - This makes the application more adaptable, flexible and scalable.
+    - [ENVIRONMENT](#1-environment)
+    - [LOG_LEVEL](#2-log_level)
+    - [HISTORY_FILE](#3-history_file)
+
 
 #### **1. ENVIRONMENT:**
 
@@ -354,8 +358,10 @@ load_dotenv()
 
 
 ## **8. Exception Handling Strategies**
-    - [LBYL]
-    - [EAFP]
+
+- Exception Handling is used to try and catch errors.
+    - [LBYL](#1-lbyl)
+    - [EAFP](#2-eafp)
 
 - Exception handling blocks are used to handle errors efficiently.
 
