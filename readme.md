@@ -222,6 +222,29 @@ Video:
 https://github.com/user-attachments/assets/70f84547-735b-4a8e-8057-ac67d0c854ba
 
 
+## **5. ADVANCED DATA HANDLING WITH PANDAS**
 
+- The History is stored and retrieved from the CSV file which helps in efficient management of data.
 
+```
+# Saving the history to csv file:
 
+    data=pd.DataFrame([
+            {"x":calc.x, "y":calc.y, "operation":calc.operation.__name__, "result":calc.perform()} 
+            for calc in history
+        ])
+
+    file_exists = os.path.exists(cls.HISTORY_FILE)
+
+    data.to_csv(cls.HISTORY_FILE, mode='a', header=not file_exists, index=False) 
+
+```
+
+```
+# Retrieving history from csv file:
+
+     df = pd.read_csv(cls.HISTORY_FILE)
+
+```
+
+[Click to view the History Management file](./app/History/Managing_History.py)
