@@ -258,7 +258,7 @@ https://github.com/user-attachments/assets/70f84547-735b-4a8e-8057-ac67d0c854ba
     - [Facade Pattern](#2-facade-pattern)
     - [Factory Method Pattern](#3factory-method-pattern)
     - [Singleton Pattern](#4-singleton-pattern)
-    - [Strategy Pattern]
+    - [Strategy Pattern](#5-strategy-pattern)
 
 #### **1. Command Pattern:**
 
