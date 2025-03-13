@@ -22,7 +22,7 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
     - [Menu Command](#-menu-command)
 3. [CALCULATION HISTORY MANAGEMENT WITH PANDAS](#3-calculation-history-management-with-pandas) <br/>
 4. [PROFESSIONAL LOGGING PRACTICES](#4-professional-logging-practices) <br/>
-5. ADVANCED DATA HANDLING WITH PANDAS <br/>
+5. [ADVANCED DATA HANDLING WITH PANDAS](#5-advanced-data-handling-with-pandas) <br/>
 6. DESIGN PATTERNS FOR SCALABLE ARCHITECTURE <br/>
 7. CONFIGURATION VIA ENVIRONMENT VARIABLES <br/>
 
@@ -248,3 +248,72 @@ https://github.com/user-attachments/assets/70f84547-735b-4a8e-8057-ac67d0c854ba
 ```
 
 [Click to view the History Management file](./app/History/Managing_History.py)
+
+
+## **6. DESIGN PATTERNS FOR SCALABLE ARCHITECTURE**
+
+- For the maintable, scalable, reusable and neat structure of the code design patterns are implemented.
+- The Design patterns used in this Calculator Program are 
+    - [Command Pattern](#1-command-pattern)
+    - [Facade Pattern](#2-facade-pattern)
+    - [Factory Method Pattern](#3factory-method-pattern)
+    - [Singleton Pattern](#4-singleton-pattern)
+    - [Strategy Pattern]
+
+#### **1. Command Pattern:**
+
+- The data required to execute an action is encapsulated in an object for better organization.
+
+**- Formal Definition:** Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
+
+Source: https://refactoring.guru/design-patterns/command
+
+[Click to view code](./app/commands/__init__.py)
+
+
+
+#### **2. Facade Pattern:**
+
+- Facade pattern provides a simplified interface for history management using pandas.
+
+**- Formal Definition:** Facade is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
+
+Source: https://refactoring.guru/design-patterns/facade
+
+[Click to view code](./app/History/Facade_History.py)
+
+
+#### **3.Factory Method Pattern:**
+
+- Factory method allows us to create a centralized command.
+
+**- Formal Definition:**  Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+
+Source: https://refactoring.guru/design-patterns/factory-method
+
+[Click to view code](./app/Factory/Command_Factory.py)
+
+
+#### **4. Singleton Pattern:**
+
+- Ensures that only one instance of logging or history management exists.
+
+**- Formal Definition:**  Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+
+Source: https://refactoring.guru/design-patterns/singleton
+
+[Click to view code](./app/__init__.py)
+
+
+#### **5. Strategy Pattern:**
+
+- The data is encapsulated inside a object into different strategies.
+
+**- Formal Definition:** Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
+
+Source: https://refactoring.guru/design-patterns/strategy
+
+- Factory and Singleton design patterns are Creational patterns.
+- Facade design pattern is a Structural pattern.
+- Command and Strategy design patterns are behavioral patterns. 
+
