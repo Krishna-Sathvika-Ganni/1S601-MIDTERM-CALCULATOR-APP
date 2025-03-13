@@ -61,3 +61,21 @@ class history_manager:
         else:
             logger.warning("No saved history file found.")
             print("No saved history file found.")
+
+    @classmethod
+    def get_latest(cls):
+        history = Calculations.get_history()
+        if history:
+            return history[-1] 
+        return None
+
+    @classmethod
+    def find_by_operation(cls, operation_name):
+        history = Calculations.get_history()
+        if not history:
+            raise ValueError("No history available")
+        filtered = [calc for calc in history if calc.operation.__name__ == operation_name]
+        if not filtered:
+            raise ValueError(f"Invalid operation: {operation_name}")
+        return filtered
+ 
