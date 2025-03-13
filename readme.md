@@ -339,7 +339,7 @@ Source: https://refactoring.guru/design-patterns/strategy
 
 #### **1. ENVIRONMENT:**
 
-- Mode of execution of application is determined. ( whether it's DEVELOPMENT OR PRODUCTION OR TESTING )
+- Mode of execution of application is determined.(whether it's DEVELOPMENT OR PRODUCTION OR TESTING)
 
 #### **2. LOG_LEVEL:**
 
@@ -407,8 +407,8 @@ except Exception as e:
     - [coverage](#3-coverage)
     - [Virtual environment](#4-virtual-environment)
     - [Faker](#5-faker)
-    - [Pandas]
-    - [Requirements text file]
+    - [Pandas](#6-pandas)
+    - [Requirements text file](#7-requirements-text-file)
 
 #### **1. pytest:** 
 
