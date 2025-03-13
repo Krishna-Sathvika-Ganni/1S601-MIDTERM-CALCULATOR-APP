@@ -25,7 +25,7 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
 5. [ADVANCED DATA HANDLING WITH PANDAS](#5-advanced-data-handling-with-pandas) <br/>
 6. [DESIGN PATTERNS FOR SCALABLE ARCHITECTURE](#6-design-patterns-for-scalable-architecture) <br/>
 7. [CONFIGURATION VIA ENVIRONMENT VARIABLES](#7-configuration-via-environment-variables) <br/>
-    - [ENVIRONMENT](#1environment)
+    - [ENVIRONMENT](#1-environment)
     - [LOG_LEVEL](#2-log_level)
     - [HISTORY_FILE](#3-history_file)
 
@@ -324,14 +324,11 @@ Source: https://refactoring.guru/design-patterns/strategy
 
 
 ## **7. CONFIGURATION VIA ENVIRONMENT VARIABLES**
-    - [ENVIRONMENT](#1environment)
-    - [LOG_LEVEL](#2-log_level)
-    - [HISTORY_FILE](#3-history_file)
 
 - To manage the settings dynamically, environment variables are used.
 - This makes the application more adaptable, flexible and scalable.
 
-#### **1.ENVIRONMENT:**
+#### **1. ENVIRONMENT:**
 
 - Mode of execution of application is determined. ( whether it's DEVELOPMENT OR PRODUCTION OR TESTING )
 
