@@ -28,9 +28,10 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
     - [ENVIRONMENT](#1-environment)
     - [LOG_LEVEL](#2-log_level)
     - [HISTORY_FILE](#3-history_file) <br/>
-8. [Exception Handling Strategies](#8-exception-handling-strategies) <br/>
+8. [EXCEPTION HANDLING STRATEGIES](#8-exception-handling-strategies) <br/>
     - [LBYL](#1-lbyl)
     - [EAFP](#2-eafp)
+9. [INSTALLATION REQUIREMENTS]
 
 
 
@@ -357,7 +358,7 @@ load_dotenv()
 [Click to view Code](./app/__init__.py)
 
 
-## **8. Exception Handling Strategies**
+## **8. EXCEPTION HANDLING STRATEGIES**
 
 - Exception Handling is used to try and catch errors.
     - [LBYL](#1-lbyl)
@@ -396,6 +397,99 @@ except Exception as e:
 ```
 
 [Click to view code](./app/plugins/dividecommand.py)
+
+
+## **9. INSTALLATION REQUIREMENTS**
+
+- The Following are installed dependencies to ensure code quality, testing and functionality:
+    - [pytest](#1-pytest)
+    - [pylint](#2-pylint)
+    - [coverage](#3-coverage)
+    - [Virtual environment](#4-virtual-environment)
+    - [Faker](#5-faker)
+    - [Pandas]
+    - [Requirements text file]
+
+#### **1. pytest:** 
+
+- A Strong python testing framework is the pytest.
+- It ensures that all features and functions operate as intended by automating the testing process.
+
+```
+    pip install pytest
+
+```
+
+#### **2. pylint:** 
+
+- Pylint checks whether the code adheres to PEP 8 compliance.
+
+```
+    pip install pylint-pytest
+
+```
+
+#### **3. coverage:**
+
+- 'pytest-cov' shows which codes are tested and generates a code coverage report.
+
+```
+    pip install pytest-cov
+
+```
+
+#### **4. Virtual Environment:**
+
+- Dependencies are isolated by a virtual environment (venv), which avoids conflicts between several projects.
+
+```
+
+    # Installing virtual environment
+    pip3 install virtualenv
+
+    # Creating a Virtual environment
+    python3 -m virtualenv vir_env
+
+    # Activating the virtual environment
+    source vir_env/bin/activate
+
+    # De-activating the virtual environment
+    deactivate
+
+```
+
+
+#### **5. Faker:**
+
+- The faker generates fake data that is realistic.
+
+```
+
+    pip install faker
+
+```
+
+## **6. Pandas:**
+
+- To store and manage calculation history in .csv file, pandas is installed.
+
+```
+
+    pip install pandas
+
+```
+
+#### **7. Requirements text file:**
+
+- The installed dependencies and their versions are stored in the requirements text file.
+
+```
+
+    pip freeze > requirements.txt
+
+```
+
+[Click to view the requirements text file](./requirements.txt)
 
 
 
