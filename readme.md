@@ -31,7 +31,9 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
 8. [EXCEPTION HANDLING STRATEGIES](#8-exception-handling-strategies) <br/>
     - [LBYL](#1-lbyl)
     - [EAFP](#2-eafp)
-9. [INSTALLATION REQUIREMENTS]
+9. [INSTALLATION REQUIREMENTS](#9-installation-requirements)
+
+- [VIDEO OF THE CALCULATOR PROGRAM PERFORMING ALL THE OPERATIONS](#video-of-the-calculator-program-performing-all-the-operations)
 
 
 
@@ -490,6 +492,8 @@ except Exception as e:
 ```
 
 [Click to view the requirements text file](./requirements.txt)
+
+# [VIDEO OF THE CALCULATOR PROGRAM PERFORMING ALL THE OPERATIONS](https://youtu.be/aAHICKBh9cA)
 
 
 
