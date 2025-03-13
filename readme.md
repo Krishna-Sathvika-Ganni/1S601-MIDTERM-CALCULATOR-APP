@@ -27,7 +27,11 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
 7. [CONFIGURATION VIA ENVIRONMENT VARIABLES](#7-configuration-via-environment-variables) <br/>
     - [ENVIRONMENT](#1-environment)
     - [LOG_LEVEL](#2-log_level)
-    - [HISTORY_FILE](#3-history_file)
+    - [HISTORY_FILE](#3-history_file) <br/>
+8. [Exception Handling Strategies](#8-exception-handling-strategies) <br/>
+    - [LBYL](#1-lbyl)
+    - [EAFP](#2-eafp)
+
 
 
 ## **1. COMMAND-LINE INTERFACE ( REPL )**
@@ -346,8 +350,46 @@ load_dotenv()
 
 ```
 
+[Click to view Code](./app/__init__.py)
 
 
+## **8. Exception Handling Strategies**
+    - [LBYL]
+    - [EAFP]
+
+- Exception handling blocks are used to handle errors efficiently.
+
+#### **1. LBYL:**
+
+- Look Before You Leap ( LBYL ) checks the condition before execution.
+
+```
+def divide(x: Decimal,y: Decimal) -> Decimal:
+    if y == Decimal('0'):
+        raise ValueError("Cannot be divided by Zero")
+    return x / y
+```
+
+[Click to view code](./app/operation/operations.py)
+
+
+#### **2. EAFP:**
+
+- Easier to Ask for Forgiveness than Permission ( EAFP ) executes and ctches errors.
+
+```
+
+try:
+    result = Calculator.divide(x, y)
+except InvalidOperation:
+    logger.error("Invalid arguments given")
+except Exception as e:
+    logger.error("Unexpected error")
+    print(f"{e}")
+
+```
+
+[Click to view code](./app/plugins/dividecommand.py)
 
 
 
