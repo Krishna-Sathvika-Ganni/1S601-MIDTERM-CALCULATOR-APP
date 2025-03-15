@@ -1,81 +1,64 @@
-import os
-import logging
-import pandas as pd
+import pytest
+from unittest.mock import Mock
+from app.History.Managing_History import history_manager
 from app.calculator.calculations import Calculations
-from config import CONFIG 
 
-logger = logging.getLogger(__name__)
 
-class history_manager:
-    HISTORY_FILE=CONFIG['history_file']
+@pytest.fixture
+def mock_command_handler():
+    '''Mock command handler'''
+    mock_handler = Mock()
+    mock_handler.register_command = Mock()
+    mock_handler.execute_command = Mock()
+    return mock_handler
 
-    @classmethod
-    def save_history(cls):
-        history=Calculations.get_history()
-        if not history:
-            print("There is no history to save")
-            logger.warning("No history data")
-            return
-        
-        os.makedirs(os.path.dirname(cls.HISTORY_FILE), exist_ok=True)
-        data=pd.DataFrame([
-            {"x":calc.x, "y":calc.y, "operation":calc.operation.__name__, "result":calc.perform()} 
-            for calc in history
-        ])
 
-        file_exists = os.path.exists(cls.HISTORY_FILE)
+@pytest.fixture
+def mock_get_history():
+    '''Fixture'''
+    mock_get = Mock()
+    mock_get.return_value = []  
+    Calculations.get_history = mock_get
+    return mock_get
 
-        data.to_csv(cls.HISTORY_FILE, mode='a', header=not file_exists, index=False) 
-        print("History saved.")
-        logger.info("Saved History")
 
-    @classmethod
-    def load_history(cls):
-        if not os.path.exists(cls.HISTORY_FILE):
-            logger.error("Saved history not found")
-            print("No saved history")
-            return
-        
-        df = pd.read_csv(cls.HISTORY_FILE)
-        print("Loaded History:")
-        print(df)
-        logger.info("History loaded successfully.")
+class TestManageHistory:
+    def test_managing_history_empty(self, mock_get_history):
+        '''Test that get_latest() returns None when history is empty'''
+        history = history_manager()  # No arguments needed
+        print(f"History before test: {history.get_latest()}")
+        history.clear_history()
+        assert history.get_latest() is None
 
-    @classmethod
-    def clear_history(cls):
-        if not Calculations.get_history():
-            logger.warning("No in-memory history to clear.")
-            print("No in-memory history to clear.")
-            return
-        
-        Calculations.clear_history()
-        logger.info("Cleared in-memory history.")
-        print("In-memory history cleared.")
+    def test_managing_history_exception(self, mock_get_history):
+        '''Test that find_by_operation() raises an exception for invalid operations'''
+        history = history_manager()  
+        with pytest.raises(ValueError, match="No history available"):
+            history.find_by_operation("invalid_op")
 
-    @classmethod
-    def delete_history(cls):
-        if os.path.exists(cls.HISTORY_FILE):
-            os.remove(cls.HISTORY_FILE)
-            logger.info("History file deleted")
-            print("Saved history deleted.")
-        else:
-            logger.warning("No saved history file found.")
-            print("No saved history file found.")
+    def test_save_history(self, mock_get_history):
+        '''Test that save_history saves history correctly'''
+        history = history_manager() 
+        mock_get_history.return_value = [Mock(x=1, y=2, operation=Mock(__name__='add'), perform=Mock(return_value=3))]
+        history.save_history()
+        pd_mock = Mock()
+        pd_mock.to_csv.assert_called_once()
+        assert pd_mock.to_csv.called
 
-    @classmethod
-    def get_latest(cls):
-        history = Calculations.get_history()
-        if history:
-            return history[-1] 
-        return None
+    def test_load_history(self):
+        '''Test that load_history loads data correctly'''
+        history = history_manager()
+        history.load_history()  
 
-    @classmethod
-    def find_by_operation(cls, operation_name):
-        history = Calculations.get_history()
-        if not history:
-            raise ValueError("No history available")
-        filtered = [calc for calc in history if calc.operation.__name__ == operation_name]
-        if not filtered:
-            raise ValueError(f"Invalid operation: {operation_name}")
-        return filtered
- 
+
+    def test_clear_history(self):
+        '''Test that clear_history clears the in-memory history'''
+        history = history_manager()  
+        history.clear_history()
+        assert Calculations.get_history() == [] 
+
+    def test_delete_history(self):
+        '''Test that delete_history deletes the saved history file'''
+        history = history_manager()  
+        history.delete_history()
+       
