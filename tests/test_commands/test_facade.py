@@ -12,7 +12,9 @@ def mock_history_manager():
 @pytest.fixture
 def history_facade(mock_history_manager):
     '''Fixture'''
-    return HistoryFacade()
+    facade=HistoryFacade()
+    facade.history_manager=mock_history_manager
+    return facade
 
 class TestFacadeHistory:
     def test_save_history(self, history_facade, mock_history_manager):
