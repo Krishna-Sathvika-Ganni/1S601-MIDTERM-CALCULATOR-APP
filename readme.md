@@ -33,7 +33,7 @@ THE DESIGN OF THIS PROJECT IS IMPLEMENTED USING:
     - [EAFP](#2-eafp)
 9. [INSTALLATION REQUIREMENTS](#9-installation-requirements)
 
-- [VIDEO OF THE CALCULATOR PROGRAM PERFORMING ALL THE OPERATIONS](#video-of-the-calculator-program-performing-all-the-operations)
+- [VIDEO OF THE CALCULATOR PROGRAM PERFORMING ALL THE OPERATIONS](#video-of-the-calculator-program-performing-all-the-operations-with-explanation)
 
 
 
@@ -493,9 +493,9 @@ except Exception as e:
 
 [Click to view the requirements text file](./requirements.txt)
 
-#### VIDEO OF THE CALCULATOR PROGRAM PERFORMING ALL THE OPERATIONS 
+#### VIDEO OF THE CALCULATOR PROGRAM PERFORMING ALL THE OPERATIONS WITH EXPLANATION
 
-- [Click here to view the video](https://youtu.be/aAHICKBh9cA)
+- [Click here to view the video](https://youtu.be/8V8xT4drEDA?si=MnZty6rFbwvt2ZRg)
 
 
 
