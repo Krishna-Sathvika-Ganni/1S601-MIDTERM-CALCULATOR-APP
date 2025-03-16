@@ -7,4 +7,11 @@ class ClearHistory(Command):
         self.history_facade=HistoryFacade()
         
     def execute(self):
-        self.history_facade.clear_history()
+        try:
+            result = self.history_facade.clear_history()
+            if result:
+                print(result)
+            else:
+                print("History cleared successfully")
+        except Exception as e:
+            print(str(e))
